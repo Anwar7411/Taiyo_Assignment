@@ -7,7 +7,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { FormControl, FormControlLabel, FormLabel, Grid, Radio, RadioGroup, TextField,Modal } from '@mui/material';
 import {useDispatch} from 'react-redux'
-import { AddContact } from '../Redux/Action';
+import { EditContact } from '../Redux/Action';
 // interface contactObject{
 //     firstName:String,
 //     lastName:String,
@@ -16,30 +16,28 @@ import { AddContact } from '../Redux/Action';
 
 interface propsCheck{
     open:boolean,
-    setOpen:(value:boolean)=>void,
+    setOpen:(value:any)=>void,
     contacts:any,
+    ele:object
 }
 
-const ContactForm = ({open,setOpen,contacts}:propsCheck) => {
+const EditContactForm = ({open,setOpen,contacts,ele}:propsCheck) => {
+  
+    const [ data,setData ]= useState<any>({...ele})
 
-    const [ data,setData ]= useState<any>({
-        id:contacts.length+1,
-        firstName: "",
-        lastName: "",
-        phoneNumber:"",
-        })
+    console.log("edit",ele)
 
      const dispatch:any=useDispatch();
 
     const handleClose = () => {
-        setOpen(false);
+        setOpen({open:false,ele:{}});
       };
       const handleChange=(e: React.ChangeEvent<HTMLInputElement>)=>{
        setData({...data,[e.target.name]:e.target.value})
       }
  const handleCreateContact=()=>{
-    dispatch(AddContact(contacts,data))
-  setOpen(false)
+    dispatch(EditContact(contacts,data))
+     setOpen(false)
  }
 
   return (
@@ -51,10 +49,10 @@ const ContactForm = ({open,setOpen,contacts}:propsCheck) => {
         <input type="text" name='lastName' onChange={handleChange} value={data.lastName} /><br/>
         <label>Phone Number</label><br/>
         <input type="number" name='phoneNumber' onChange={handleChange} value={data.phoneNumber} /><br/>
-        <button onClick={handleCreateContact}>Add</button>
+        <button onClick={handleCreateContact}>Submit</button>
       </div>
      </div>
   )
 }
 
-export default ContactForm
+export default EditContactForm
