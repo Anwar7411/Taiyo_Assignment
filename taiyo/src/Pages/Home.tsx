@@ -1,28 +1,21 @@
 import { useState,useEffect } from "react";
 import {useSelector,useDispatch} from 'react-redux'
-import ContactForm from "../Components/ContactForm";
-import EditContactForm from "../Components/EditContactForm";
 import { DeleteContact } from "../Redux/Action";
-
-interface contactObject{
-firstName:String,
-lastName:String,
-status:string
-}
+import { useNavigate} from 'react-router-dom'
 
 const Home = () => {
   const contacts=useSelector((store:any)=>store.contacts)
-  const [open, setOpen] = useState<boolean>(false);
-  const [openEdit, setOpenEdit] = useState<any>({open:false,ele:{}});
+  const navigate=useNavigate();
+
 
   const dispatch:any=useDispatch()
 
   const handleAdd=()=>{
-     setOpen(true)
+  navigate("/contact/add")
   }
 
-  const handleEdit=(el:object)=>{
-    setOpenEdit({open:true,ele:el});
+  const handleEdit=(el:any)=>{
+    navigate(`/contact/Edit/${el.id}`)
   }
 
   const handleDelete=(el:object)=>{
@@ -62,8 +55,6 @@ const Home = () => {
             </div>
         }
       </div>
-      <ContactForm open={open} setOpen={setOpen} contacts={contacts} />
-      <EditContactForm open={openEdit.open} setOpen={setOpenEdit} contacts={contacts} ele={openEdit.ele} />
       </div>
     </div>
   )
