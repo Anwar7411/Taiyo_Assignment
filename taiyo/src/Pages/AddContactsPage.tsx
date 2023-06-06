@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { AddContact } from '../Redux/Action';
 import { useNavigate} from 'react-router-dom'
+import './Form.css'
 
 const AddContacts = () => {
   const contacts=useSelector((store:any)=>store.contacts)
@@ -26,14 +27,14 @@ dispatch(AddContact(contacts,data));
 navigate('/')
 }
   return (
-    <div>
-         <label>First Name</label><br/>
-         <input type="text" name='firstName' onChange={handleChange} value={data.firstName} /><br/>
-         <label>Last Name</label><br/>
-         <input type="text" name='lastName' onChange={handleChange} value={data.lastName} /><br/>
-         <label>Phone Number</label><br/>
-         <input type="number" name='phoneNumber' onChange={handleChange} value={data.phoneNumber} /><br/>
-         <button onClick={handleCreateContact}>Add</button>
+    <div className='form_container'>
+         <label className='labels'>First Name</label><br/>
+         <input type="text" className='textfeild' name='firstName' onChange={handleChange} value={data.firstName} /><br/>
+         <label className='labels'>Last Name</label><br/>
+         <input type="text" className='textfeild'name='lastName' onChange={handleChange} value={data.lastName} /><br/>
+         <label className='labels'>Phone Number</label><br/>
+         <input type="number"className='textfeild' name='phoneNumber' onChange={handleChange} value={data.phoneNumber} /><br/>
+         <button onClick={handleCreateContact} className='form_button'>Add</button>
     </div>     
   )
 }

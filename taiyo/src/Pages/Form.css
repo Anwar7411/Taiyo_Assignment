@@ -1,0 +1,38 @@
+.form_container{
+    /* border: 1px solid red; */
+    width: 500px;
+    margin: auto;
+    margin-top: 120px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    background-color: rgb(223, 209, 184);
+    border-radius: 10px;
+}
+
+.textfeild{
+    width: 50%;
+    border: 1px solid grey;
+    border-radius: 10px;
+    font-size: 18px;
+    height: 40px;
+    margin: 10px;
+    padding-left: 10px;
+    font-weight: 300;
+
+}
+.labels{
+    display: inline-block;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+
+}
+.form_button{
+    width:40%;
+    padding: 4px;
+    background-color: rgba(247, 117, 10, 0.975);
+    font-size: 15px;
+    color: white;
+    font-weight: 500;
+    margin: 20px;
+    border-radius: 10px;
+}

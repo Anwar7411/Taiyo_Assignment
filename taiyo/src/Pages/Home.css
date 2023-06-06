@@ -1,0 +1,125 @@
+.home_container{
+    width:90%;
+    margin: auto;
+    text-align: center;
+}
+
+.create_contact_button{
+    width:10%;
+    background-color: rgb(207, 95, 46);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    margin: auto;
+}
+.create_contact_button>button{
+    font-size: 18px;
+    margin: 10px;
+    font-weight: 600;
+    color: white;
+}
+
+.contact_div{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: space-between;
+    margin-top: 40px;
+    gap: 50px;
+}
+.error_div{
+    display: flex;
+    width: 35%;
+    margin: auto;
+    gap: 50px;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+     padding: 20px;
+     margin-top: 12%;
+     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.error_text{
+    font-size: 18px;
+   font-weight: 300;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.contact_card{
+    font-size: 17px;
+    font-weight: 400;
+    padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.contact_info{
+    margin-bottom: 10px;
+}
+.contact_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:40px
+}
+.contact_button button{
+    width:80px;
+    padding: 4px;
+    background-color: rgba(247, 117, 10, 0.975);
+    font-size: 15px;
+    color: white;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 2000px) {
+    .create_contact_button{
+        width:25%;
+    }
+    .error_div{
+        width:40%
+    }
+    .contact_div{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        justify-content: space-between;
+        gap: 40px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .create_contact_button{
+        width:27%;
+    }
+    .error_div{
+        width:50%;
+        gap: 30px;
+    }
+    .error_text{
+      font-size: 16px
+    }
+    .contact_div{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        justify-content: space-between;
+        gap: 40px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .create_contact_button{
+        width:40%;
+        margin-top: 40px;
+    }
+    .create_contact_button>button{
+        font-size:12px;
+    }
+    .error_div{
+        width:70%;
+        gap: 30px;
+    }
+    .error_text{
+      font-size: 12px
+    }
+    .contact_div{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        justify-content: space-between;
+        gap: 40px;
+    }
+}
